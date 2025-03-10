@@ -10,16 +10,17 @@ jobs:
   build:
     working_directory: ~/SimpleApplication
     docker:
-      - image: circleci/node:20
+      - image: circleci/node:16.20.2
+
     steps:
       - checkout
       - run:
-          name: Update NPM (if needed)
-          command: 'sudo npm install -g npm'
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Install dependencies
+          name: install-npm
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
