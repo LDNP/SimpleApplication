@@ -10,7 +10,7 @@ jobs:
   build:
     working_directory: ~/SimpleApplication
     docker:
-      - image: circleci/node:20.17.0
+      - image: circleci/node:20.16.0
 
     steps:
       - checkout
