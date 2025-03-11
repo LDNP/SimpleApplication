@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Update system & install dependencies
-sudo apt update && sudo apt install -y nodejs npm
+sudo apt update && sudo apt install nodejs npm
 
 # Install PM2 globally
 sudo npm install -g pm2
